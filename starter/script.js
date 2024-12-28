@@ -51,9 +51,18 @@ const jessica = {
   family: ['Alice', 'Bob'],
 };
 
+// Shallow copy
 const jCopy = { ...jessica };
 jCopy.lastName = 'Mikosas';
 
 console.log(jessica, jCopy);
 jCopy.family.push('Mary');
 jCopy.family.push('John');
+
+// Deep clone
+const jClone = structuredClone(jessica);
+jClone.family.push('Maryy');
+jClone.family.push('Maryyyyy');
+
+console.log('ori:', jessica);
+console.log('clone:', jClone);
