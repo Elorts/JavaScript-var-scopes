@@ -25,14 +25,35 @@
 // const firstName = 'Jonas';
 // calcAge(1991);
 
-const jessica = {
+const jessica1 = {
   firstName: 'Jessica',
   lastName: 'Williams',
   age: 27,
 };
 
-const marriedJessica = jessica;
-marriedJessica.lastName = 'Davis';
+function marryPerson(person, newLN) {
+  person.lastName = newLN;
+  return person;
+}
 
-console.log('Before', jessica);
+const marriedJessica = marryPerson(jessica1, 'Davis');
+
+// const marriedJessica = jessica;
+// marriedJessica.lastName = 'Davis';
+
+console.log('Before', jessica1);
 console.log('After:', marriedJessica);
+
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+const jCopy = { ...jessica };
+jCopy.lastName = 'Mikosas';
+
+console.log(jessica, jCopy);
+jCopy.family.push('Mary');
+jCopy.family.push('John');
